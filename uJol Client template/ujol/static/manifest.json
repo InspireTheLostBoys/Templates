@@ -1,0 +1,20 @@
+{
+  "name": "ujol",
+  "short_name": "ujol",
+  "icons": [
+    {
+      "src": "/static/img/icons/logo-small.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/img/icons/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "background_color": "#000000",
+  "theme_color": "#00E676"
+}

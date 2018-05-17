@@ -1,41 +1,73 @@
+//Core imports
 import Vue from 'vue'
-import BootstrapVue from 'bootstrap-vue'
+import Router from 'vue-router'
 
-import Router from 'vue-router';
-import Login from '@/components/Login';
-import Main from '@/components/Main';
-import Activity from '@/components/Activity/Activity';
-import Profile from '@/components/Profile/Profile';
-import Notifications from '@/components/Notifications/Notifications';
+//Page imports
+import Login from '@/components/Login/Login'
 
-Vue.use(Router)
-Vue.use(BootstrapVue)
+//Main Pages
+import Main from '@/components/Main/Main';
+import Activity from '@/components/Main/Activity/Activity';
+import Notifications from '@/components/Main/Notifications/Notifications';
+import NewsFeed from '@/components/Main/NewsFeed/NewsFeed';
+import Profile from '@/components/Main/Profile/Profile';
+import Venues from '@/components/Main/Venues/Venues';
+import Friends from '@/components/Main/Friends/Friends';
+import Settings from '@/components/Main/Settings/Settings';
+
+Vue.use(Router);
 
 export default new Router({
   routes: [{
     path: '/',
-    component: Login
-  }, {
-    path: '/Login',
+    name: 'Login',
     component: Login
   }, {
     path: '/Main',
+    name: 'Main',
     component: Main,
     children: [{
-      path: 'Activity',
-      components: {
-        MainPage: Activity
+        path: 'Activity',
+        components: {
+          MainPage: Activity
+        }
+      },
+      {
+        path: 'Notifications',
+        components: {
+          MainPage: Notifications
+        }
+      },
+      {
+        path: 'NewsFeed',
+        components: {
+          MainPage: NewsFeed
+        }
+      },
+      {
+        path: 'Profile',
+        components: {
+          MainPage: Profile
+        }
+      },
+      {
+        path: 'Venues',
+        components: {
+          MainPage: Venues
+        }
+      },
+      {
+        path: 'Friends',
+        components: {
+          MainPage: Friends
+        }
+      },
+      {
+        path: 'Settings',
+        components: {
+          MainPage: Settings
+        }
       }
-    }, {
-      path: 'Profile',
-      components: {
-        MainPage: Profile
-      }
-    }, {
-      path: 'Notifications',
-      components: {
-        MainPage: Notifications
-      }
-    }]
+    ]
   }]
 })
